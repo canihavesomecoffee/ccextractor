@@ -73,7 +73,7 @@ jobs:
       run: ./ccextractorwinfull.exe --version
       working-directory: ./windows/Release-Full
     - name: build installer
-      run: wix convert installer.wxs && wix build installer.wxs
+      run: wix build installer.wxs
       working-directory: ./windows
     - uses: actions/upload-artifact@v2
       with:
