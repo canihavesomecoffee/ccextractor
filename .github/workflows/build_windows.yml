@@ -73,7 +73,7 @@ jobs:
       run: ./ccextractorwinfull.exe --version
       working-directory: ./windows/Release-Full
     - name: build installer
-      run: wix build installer.wxs
+      run: wix build -o CCExtractor.msi installer.wxs
       working-directory: ./windows
     - uses: actions/upload-artifact@v2
       with:
@@ -90,7 +90,7 @@ jobs:
       with:
         name: CCExtractor Windows OCR and HardSubX Release installer
         path: |
-          ./windows/installer.msi
+          ./windows/CCExtractor.msi
   build_ocr_hardsubx_debug:
     runs-on: windows-latest
     steps:
