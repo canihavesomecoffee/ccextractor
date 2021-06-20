@@ -34,7 +34,6 @@ jobs:
         name: CCExtractor Windows Non-OCR Release build
         path: |
           ./windows/Release/ccextractorwin.exe
-          ./windows/Release/ccextractorgui.exe
           ./windows/Release/*.dll
   build_non_ocr_debug:
     runs-on: windows-latest
@@ -55,7 +54,6 @@ jobs:
         path: |
           ./windows/Debug/ccextractorwin.exe
           ./windows/Debug/ccextractorwin.pdb
-          ./windows/Debug/ccextractorgui.exe
           ./windows/Debug/*.dll
   build_ocr_hardsubx_release:
     runs-on: windows-latest
@@ -65,13 +63,21 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
     - name: install WiX
-      run: dotnet tool install --global wix --version 4.0.0-preview.0
+      run: dotnet tool install --global wix --version 4.0.0-preview.0 &&  wix extension -g add WixToolset.UI.wixext
+    - name: Make sure WiX works
+      run: wix --version && wix extension -g list
     - name: build Release
       run: msbuild ccextractor.sln /p:Configuration=Release-Full
       working-directory: ./windows
     - name: Display version information
       run: ./ccextractorwinfull.exe --version
       working-directory: ./windows/Release-Full
+    - name: Download Flutter GUI
+      run: ((Invoke-WebRequest -UseBasicParsing https://api.github.com/repos/CCExtractor/ccextractorfluttergui/releases/latest).Content | ConvertFrom-Json).assets | ForEach-Object {if ($_.name -eq "windows.zip") { Invoke-WebRequest -UseBasicParsing -Uri $_.browser_download_url -OutFile windows.zip}}
+      working-directory: ./windows/Release-Full/
+    - name: Unzip Flutter GUI
+      run: Expand-Archive -Path ./windows.zip -DestinationPath ./
+      working-directory: ./windows/Release-Full/
     - name: build installer
       run: wix build -o CCExtractor.msi installer.wxs
       working-directory: ./windows
@@ -79,13 +85,8 @@ jobs:
       with:
         name: CCExtractor Windows OCR and HardSubX Release build
         path: |
-          ./windows/Release-Full/ccextractorwinfull.exe
+          ./windows/Release-Full/*.exe
           ./windows/Release-Full/*.dll
-    - uses: actions/upload-artifact@v2
-      with:
-        name: CCExtractor Windows OCR and HardSubX Release build
-        path: |
-          ./windows/Release/ccextractorgui.exe
     - uses: actions/upload-artifact@v2
       with:
         name: CCExtractor Windows OCR and HardSubX Release installer
@@ -111,8 +112,3 @@ jobs:
           ./windows/Debug-Full/ccextractorwinfull.exe
           ./windows/Debug-Full/ccextractorwinfull.pdb
           ./windows/Debug-Full/*.dll
-    - uses: actions/upload-artifact@v2
-      with:
-        name: CCExtractor Windows OCR and HardSubX Debug build
-        path: |
-          ./windows/Debug/ccextractorgui.exe
