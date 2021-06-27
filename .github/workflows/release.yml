@@ -33,7 +33,7 @@ jobs:
       run: Expand-Archive -Path ./windows.zip -DestinationPath ./installer
       working-directory: ./windows
     - name: build installer
-      run:  wix build -ext "$HOME\.wix\extensions\WixToolset.UI.wixext\4.0.0-preview.0\tools\WixToolset.UI.wixext.dll" -d "AppVersion=${GITHUB_REF}.0.0" -o CCExtractor.msi installer.wxs
+      run:  wix build -ext "$HOME\.wix\extensions\WixToolset.UI.wixext\4.0.0-preview.0\tools\WixToolset.UI.wixext.dll" -d "AppVersion=${env:GITHUB_REF}.0.0" -o CCExtractor.msi installer.wxs
       working-directory: ./windows
     - name: Upload as asset
       uses: AButler/upload-release-assets@v2.0
