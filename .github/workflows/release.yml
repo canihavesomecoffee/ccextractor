@@ -36,6 +36,9 @@ jobs:
     - name: Unzip Flutter GUI
       run: Expand-Archive -Path ./windows.zip -DestinationPath ./installer
       working-directory: ./windows
+    - name: Display installer folder contents
+      run: Get-ChildItem -Recurse ./installer
+      working-directory: ./windows
     - name: build installer
       run:  wix build -ext "$HOME\.wix\extensions\WixToolset.UI.wixext\4.0.0-preview.0\tools\WixToolset.UI.wixext.dll" -d "AppVersion=${{ steps.get_version.outputs.VERSION }}.0.0" -o CCExtractor.msi installer.wxs
       working-directory: ./windows
