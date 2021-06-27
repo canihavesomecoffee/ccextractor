@@ -5,14 +5,14 @@ on:
     - '.github/workflows/format.yml'
     - 'src/**.c'
     - 'src/**.h'
+    tags-ignore: # ignore push via new tag
+    - '*.*'
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
     - '.github/workflows/format.yml'
     - 'src/**.c'
     - 'src/**.h'
-  tags-ignore: # ignore push via new tag
-    - '*.*'
 
 jobs:
   format:

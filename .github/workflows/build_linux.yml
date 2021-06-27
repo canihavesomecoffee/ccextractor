@@ -9,6 +9,8 @@ on:
     - '**Makefile**'
     - 'linux/**'
     - 'package_creators/**'
+    tags-ignore: # ignore push via new tag
+    - '*.*'
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
@@ -18,8 +20,6 @@ on:
     - '**Makefile**'
     - 'linux/**'
     - 'package_creators/**'
-  tags-ignore: # ignore push via new tag
-    - '*.*'
 
 jobs:
   build_shell:
