@@ -11,6 +11,9 @@ on:
     - '.github/workflows/format.yml'
     - 'src/**.c'
     - 'src/**.h'
+  tags-ignore: # ignore push via new tag
+    - '*.*'
+
 jobs:
   format:
     runs-on: ubuntu-latest

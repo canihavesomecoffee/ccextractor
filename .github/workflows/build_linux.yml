@@ -18,6 +18,9 @@ on:
     - '**Makefile**'
     - 'linux/**'
     - 'package_creators/**'
+  tags-ignore: # ignore push via new tag
+    - '*.*'
+
 jobs:
   build_shell:
     runs-on: ubuntu-latest
