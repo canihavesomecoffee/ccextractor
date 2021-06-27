@@ -133,31 +133,31 @@
 		</ComponentGroup>
 		<ComponentGroup Id="CCX_Components_MainFolder_data_flutter_assets" Directory="CCX_data_flutter_assets">
 			<Component Id="cmp1C63471C238EEA92D0AE37BC7DF9E605" Guid="{DEAF277D-3D05-4B37-A732-9514B503B74A}">
-				<File Id="fil3F43BEEF0A85EE6619E4674CA43CB616" KeyPath="yes" Source="./installer/data/flutter_assets\AssetManifest.json"/>
+				<File Id="fil3F43BEEF0A85EE6619E4674CA43CB616" KeyPath="yes" Source="./installer/data/flutter_assets/AssetManifest.json"/>
 			</Component>
 			<Component Id="cmp414DC13EF11DED7194619DD3FC5F4CA7" Guid="{E66832FA-6880-4249-92A0-A26A4FF0A1F9}">
-				<File Id="filD6CD37343140A4FABEA77420A8B86B57" KeyPath="yes" Source="./installer/data/flutter_assets\FontManifest.json"/>
+				<File Id="filD6CD37343140A4FABEA77420A8B86B57" KeyPath="yes" Source="./installer/data/flutter_assets/FontManifest.json"/>
 			</Component>
 			<Component Id="cmp4AD05995360EA9B961C2D73FE38274D2" Guid="{B09977A1-1C36-4F5D-B3BC-394D10AC950D}">
-				<File Id="filC4871B1F6646D8021500E7E62CF93FAC" KeyPath="yes" Source="./installer/data/flutter_assets\NOTICES"/>
+				<File Id="filC4871B1F6646D8021500E7E62CF93FAC" KeyPath="yes" Source="./installer/data/flutter_assets/NOTICES"/>
 			</Component>
 		</ComponentGroup>
 		<ComponentGroup Id="CCX_Components_MainFolder_data_flutter_assets_assets" Directory="CCX_data_flutter_assets_assets">
 			<Component Id="cmp5F6AEEA1DB53EC5D0D51921A0B62098C" Guid="{CECCAC58-B818-42E2-849A-BFA4A8CA4FBE}">
-				<File Id="fil0E47318EAF44F6EEF60A89C92FCD2FAA" KeyPath="yes" Source="./installer/data/flutter_assets\assets\ccextractor"/>
+				<File Id="fil0E47318EAF44F6EEF60A89C92FCD2FAA" KeyPath="yes" Source="./installer/data/flutter_assets/assets/ccextractor"/>
 			</Component>
 			<Component Id="cmpDA8A6D10314F9C5A931AB86118A106CC" Guid="{75DE9E26-1024-4E83-8995-078624187483}">
-				<File Id="fil72BB9315DC954394F9980ECD2DA6D21F" KeyPath="yes" Source="./installer/data/flutter_assets\assets\ccx.svg"/>
+				<File Id="fil72BB9315DC954394F9980ECD2DA6D21F" KeyPath="yes" Source="./installer/data/flutter_assets/assets/ccx.svg"/>
 			</Component>
 		</ComponentGroup>
 		<ComponentGroup Id="CCX_Components_MainFolder_data_flutter_assets_fonts" Directory="CCX_data_flutter_assets_fonts">
 			<Component Id="cmp97B1795B6861175BEF48B71FC703EDA6" Guid="{292269F8-9FC7-464A-A9AB-AF5BA97D7F06}">
-				<File Id="fil26D47F100D1B90F2759D0EAE797393FC" KeyPath="yes" Source="./installer/data/flutter_assets\fonts\MaterialIcons-Regular.otf"/>
+				<File Id="fil26D47F100D1B90F2759D0EAE797393FC" KeyPath="yes" Source="./installer/data/flutter_assets/fonts/MaterialIcons-Regular.otf"/>
 			</Component>
 		</ComponentGroup>
 		<ComponentGroup Id="CCX_Components_MainFolder_data_flutter_assets_cupertino" Directory="CCX_data_flutter_assets_cupertino">
 			<Component Id="cmp18EDD5C842814546AE2A43759CD36C77" Guid="{30AFB9BB-1C7D-4CDB-ADCA-D0773F152B45}">
-				<File Id="fil341334402AF57DB92DF3F7C92E983317" KeyPath="yes" Source="./installer/data/flutter_assets\packages\cupertino_icons\assets\CupertinoIcons.ttf"/>
+				<File Id="fil341334402AF57DB92DF3F7C92E983317" KeyPath="yes" Source="./installer/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf"/>
 			</Component>
 		</ComponentGroup>
 	</Fragment>
