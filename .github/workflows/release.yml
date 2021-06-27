@@ -25,10 +25,10 @@ jobs:
       run: wix --version && wix extension -g list
     - name: Download Flutter GUI
       run: ((Invoke-WebRequest -UseBasicParsing https://api.github.com/repos/CCExtractor/ccextractorfluttergui/releases/latest).Content | ConvertFrom-Json).assets | ForEach-Object {if ($_.name -eq "windows.zip") { Invoke-WebRequest -UseBasicParsing -Uri $_.browser_download_url -OutFile windows.zip}}
-      working-directory: ./windows/Release-Full/
+      working-directory: ./windows
     - name: Unzip Flutter GUI
-      run: Expand-Archive -Path ./windows.zip -DestinationPath ./
-      working-directory: ./windows/installer
+      run: Expand-Archive -Path ./windows.zip -DestinationPath ./installer
+      working-directory: ./windows
     - name: build installer
       run:  wix build -ext "$HOME\.wix\extensions\WixToolset.UI.wixext\4.0.0-preview.0\tools\WixToolset.UI.wixext.dll" -d "AppVersion=$GITHUB_REF.0.0" -o CCExtractor.msi installer.wxs
       working-directory: ./windows
