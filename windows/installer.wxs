@@ -139,7 +139,7 @@
 				<File Id="filD6CD37343140A4FABEA77420A8B86B57" KeyPath="yes" Source="./installer/data/flutter_assets/FontManifest.json"/>
 			</Component>
 			<Component Id="cmp4AD05995360EA9B961C2D73FE38274D2" Guid="{B09977A1-1C36-4F5D-B3BC-394D10AC950D}">
-				<File Id="filC4871B1F6646D8021500E7E62CF93FAC" KeyPath="yes" Source="./installer/data/flutter_assets/NOTICES"/>
+				<File Id="filC4871B1F6646D8021500E7E62CF93FAC" KeyPath="yes" Source="./installer/data/flutter_assets/NOTICES.Z"/>
 			</Component>
 		</ComponentGroup>
 		<ComponentGroup Id="CCX_Components_MainFolder_data_flutter_assets_assets" Directory="CCX_data_flutter_assets_assets">
